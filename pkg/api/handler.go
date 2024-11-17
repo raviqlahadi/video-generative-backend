@@ -15,7 +15,7 @@ func HealthCheckHandler(w http.ResponseWriter, r *http.Request) {
 
 func NewRouter() *mux.Router {
 	router := mux.NewRouter()
-	router.HandleFunc("/", TrendingHanler).Methods("GET")
+	router.HandleFunc("/", HealthCheckHandler).Methods("GET")
 	router.HandleFunc("/trending", TrendingHanler).Methods("GET")
 	router.HandleFunc("/category", CategoryHandler).Methods("GET")
 	router.HandleFunc("/search", SearchHandler).Methods("GET")
