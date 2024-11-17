@@ -16,8 +16,8 @@ func main() {
 
 	corsRouter := middleware.EnableCors(router)
 
-	log.Printf("Server running on :8080")
-	if err := http.ListenAndServe(":8080", corsRouter); err != nil {
+	log.Printf("Server running on 0.0.0.0:8080")
+	if err := http.ListenAndServe("0.0.0.0:8080", corsRouter); err != nil {
 		log.Fatalf("Server failed: %s", err)
 	}
 
